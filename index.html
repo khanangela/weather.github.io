@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weather app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+</head>
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg p-2">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather App <span><img width="30" src="images/sun.png" alt="" class="snowflake
+            "></span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About this app</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Check Weather
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Delhi</a></li>
+                  <li><a class="dropdown-item" href="#">Mumbai</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Banglore</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+            <form class="d-flex" role="search">
+              <input id="city" class="form-control me-2" type="search" placeholder="search any city..." aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container mt-5">
+        <h1 class="text-center mb-4">Weather For <span id="cityName"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Temperature</h4>
+                  </div>
+                  <div class="card-body">
+                    <img src="images/hot.png" alt="hot"  class="temp">
+                    <h1 class="card-title pricing-card-title"><span id="temp2"></span> <small class="text-muted fw-light">&deg;C</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                     
+                      <li class="lists">Temperature is <span id="temp"></span></li>
+                      <li class="lists">Min Temperature is <span id="min_temp"></span></li>
+                      <li class="lists">Max Temperature is <span id="max_temp"></span></li>
+                     
+                    </ul>
+                   
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col">
+                <div class="card mb-4 card-active rounded-3">
+                  <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Wind Info</h4>
+                  </div>
+                  <div class="card-body card-body-active">
+                    <img src="images/wind.png" alt="wind" class="wind">
+                    <h1 class="card-title pricing-card-title"><span id="wind_speed2" style="color:#fff;"></span> <small class="text-light fw-light">km/hr</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                     
+                        <li class="lists" style="color:#fff;">Sunrise is <span id="sunrise"></span></li>    
+                        <li class="lists" style="color:#fff;">Sunset is <span id="sunset"></span></li>    
+                        <li class="lists" style="color:#fff;">Wind Speed is <span id="wind_speed"></span></li>    
+                        <li class="lists" style="color:#fff;">Wind Degree is <span id="wind_degree"></span></li>    
+                      
+                    </ul>
+                   
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col">
+                <div class="card mb-4 rounded-3">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Humidity Info</h4>
+                  </div>
+                  <div class="card-body">
+                    <img src="images/humidity.png" alt="humidity"  class="humidity">
+                    <h1 class="card-title pricing-card-title"><span id="humidity2"></span> <small class="text-muted fw-light">%</small></h1>
+
+                    <ul class="list-unstyled mt-3 mb-4">
+                        
+                        <li class="lists">Humidity is <span id="humidity"></span></li>    
+                        
+                        <li class="lists">Feels like is <span id="feels_like"></span></li>    
+                        <li class="lists">Cloud PCT is <span id="cloud_pct"></span></li>    
+                    </ul>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            
+            </div>
+          </main>
+      
+
+
+
+          <!-- footer -->
+          <footer class="footer dark-mode  pt-4 pb-3 pb-lg-5 mt-5">
+            <div class="container pt-lg-4">
+              <div class="row pb-5">
+                <div class="col-lg-4 col-md-6">
+                  <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
+                    <a class="navbar-brand1" href="#">Weather App <span><img width="30" src="images/sun.png" alt="" class="snowflake
+                      "></span></a>
+                  </div>
+                  <p class="fs-sm text-light opacity-70 pb-lg-3 mb-4">Proin ipsum pharetra, senectus eget scelerisque varius pretium platea velit. Lacus, eget eu vitae nullam proin turpis etiam mi sit. Non feugiat feugiat egestas nulla nec. Arcu tempus, eget elementum dolor ullamcorper sodales ultrices eros.</p>
+                  <form class="needs-validation" novalidate="">
+                    <label for="subscr-email" class="form-label">Subscribe to our newsletter</label>
+                    <div class="input-group">
+                      <input type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Your email" required="">
+                      <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"></i>
+                      <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
+                      <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-xl-6 col-lg-7 col-md-5 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0">
+                  <div id="footer-links" class="row">
+                    <div class="col-lg-4">
+                      <h6 class="mb-2">
+                        <a href="#useful-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Useful Links</a>
+                      </h6>
+                      <div id="useful-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                        <ul class="nav flex-column pb-lg-1 mb-lg-3">
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Home</a></li>
+                         
+                         
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">About this app</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Blog</a></li>
+                        </ul>
+                        <ul class="nav flex-column mb-2 mb-lg-0">
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Terms &amp; Conditions</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Privacy Policy</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-3">
+                      <h6 class="mb-2">
+                        <a href="#social-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Socials</a>
+                      </h6>
+                      <div id="social-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                        <ul class="nav flex-column mb-2 mb-lg-0">
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Facebook</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">LinkedIn</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Twitter</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Instagram</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-5 pt-2 pt-lg-0">
+                      <h6 class="mb-2">Contact Us</h6>
+                      <a href="mailto:email@example.com" class="fw-medium text-light">email@example.com</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0">
+                <span class="text-light opacity-50">© All rights reserved. Made by </span>
+                <a class="nav-link d-inline-block p-0" href="#" target="_blank">Zaufishan Khan</a>
+              </p>
+            </div>
+          </footer>
+
+
+    <script src="script.js"></script>
+
+    </body>
+    </html>
